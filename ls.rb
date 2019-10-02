@@ -95,11 +95,7 @@ def either24(list)
     return true
 end
 
-puts either24([1,2,2,3])
-
-def get_sandwich(str)
-
-end
+#puts either24([1,2,2,3])
 
 def maxspan(list)
     maxcount= 0
@@ -119,8 +115,53 @@ end
 #puts maxspan([1,2,2,2,2,2,2,1])
 
 def canbalance(list)
+    x = 0
     list.each do |c|
-        second half = list[(x)...list.size]
+        second_half = list[(x)...list.size]
         first_half = list[0...x]
+        sum1 = 0
+        sum2 = 0
+        first_half.each do |b|
+            sum1 += b
+        end
+        second_half.each do |b|
+            sum2 += b
+        end
+        if sum1 == sum2
+            return true
+        end
     end
+    return false
 end
+#puts canbalance([1,2,2,3,4,5,6,1])
+
+def samefirstlast(list)
+    if list.size >= 1 && list[0] == list[list.size-1]
+        return true
+    end
+    return false
+end
+
+puts samefirstlast([1,2,22,2,1])
+
+def threed(list)
+    x = 0
+    i = 0
+    list.each do |c|
+        if c == 3
+            if list[i+1] == 3
+                return false
+            end
+            x = x + 1
+        end
+        i = i + 1
+    end
+    if x == 3
+        return true
+    end
+    return false
+end
+
+puts threed([1,2,3,5,4,3,1,3])
+puts threed([3,1,1,3,3])
+puts threed([3,1,1])

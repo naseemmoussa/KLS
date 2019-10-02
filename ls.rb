@@ -142,7 +142,7 @@ def samefirstlast(list)
     return false
 end
 
-puts samefirstlast([1,2,22,2,1])
+#puts samefirstlast([1,2,22,2,1])
 
 def threed(list)
     x = 0
@@ -162,6 +162,32 @@ def threed(list)
     return false
 end
 
-puts threed([1,2,3,5,4,3,1,3])
-puts threed([3,1,1,3,3])
-puts threed([3,1,1])
+#puts threed([1,2,3,5,4,3,1,3])
+#puts threed([3,1,1,3,3])
+#puts threed([3,1,1])
+
+def getsandwich(str)
+    bread = false
+    inbetween= ""
+    breadcount = 0
+    (str.size-4).times do |n|
+        if str[n..n+4] == 'bread'
+            breadcount += 1
+        end
+    end
+    if breadcount != 2
+        return ""
+    end
+    str.size.times do |b|
+        slice = str[b..b+4]
+        if slice == "bread"
+            bread = !bread
+        end
+        if bread == true
+            inbetween += str[b]
+        end
+    end
+    return inbetween[5...inbetween.size]
+end
+
+#puts getsandwich("breadyuhbread")

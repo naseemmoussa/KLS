@@ -42,8 +42,7 @@ end
 def merge(list1,list2)
    list = []
    list = list1 + list2
-    list.each do |c|
-        lsit
+   return list.sort
 end
 
 #print merge([3,21,1],[1,2,3])

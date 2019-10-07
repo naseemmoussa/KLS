@@ -27,21 +27,23 @@ end
 #print middleway([3,4,5],[1,2,3])
 
 def ghappy(str)
-    (str.size-2).times do |c|
-        slice = str[c..c+1]
-        slice2 = str[c..c-1]
-    
-        if slice == "gg" ||
-            ggggagagga
+    str.size.times do |c|
+       slice = str[c]
+       slice1 = str[c+1]
+       slice2 = str[c-1]
+        if slice == "g" && !(slice1 == "g" || slice2 == "g")
+           return false
         end
     end
-    return false
+    return true
 end
 #puts ghappy("gagagaa")
-
+#puts ghappy("ggaggagga")
 def merge(list1,list2)
-    list3 = list1 + list2
-    return list3
+   list = []
+   list = list1 + list2
+    list.each do |c|
+        lsit
 end
 
 #print merge([3,21,1],[1,2,3])
@@ -190,4 +192,4 @@ def getsandwich(str)
     return inbetween[5...inbetween.size]
 end
 
-#puts getsandwich("breadyuhbread")
+##puts getsandwich("breadyuhbread")
